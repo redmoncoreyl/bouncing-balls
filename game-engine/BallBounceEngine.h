@@ -1,10 +1,16 @@
+#include <vector>
+
 #include "olcPixelGameEngine.h"
+#include "..\objects\Ball.h"
 
 class BallBounceEngine : public olc::PixelGameEngine {
 private:
+	std::vector<Ball> balls;
 
 public:
 	BallBounceEngine();
 	bool OnUserCreate() override;
 	bool OnUserUpdate(float fTimeElapsed) override;
+
+	void addBall(const Ball& b);
 };

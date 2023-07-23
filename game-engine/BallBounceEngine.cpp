@@ -18,3 +18,7 @@ bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
 
 	return true;
 }
+
+void BallBounceEngine::addBall(const Ball& b) {
+	balls.push_back(b);
+}
