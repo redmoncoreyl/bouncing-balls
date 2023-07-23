@@ -2,6 +2,7 @@
 #include <cstdlib>
 
 #include "game-engine/BallBounceEngine.h"
+#include "Settings.h"
 
 // g++ -o BallSim.exe BallSim.cpp .\game-engine\BallBounceEngine.cpp -luser32 -lgdi32 -lopengl32 -lgdiplus -lShlwapi -ldwmapi -lstdc++fs -static -std=c++17
 // .\BallSim.exe
@@ -10,7 +11,7 @@ int main() {
 	std::srand(std::time(nullptr));
 
 	BallBounceEngine ballSim;
-	if (ballSim.Construct(600, 600, 1, 1)) {
+	if (ballSim.Construct(Settings::SCREEN_WIDTH, Settings::SCREEN_HEIGHT, Settings::PIXEL_WIDHT, Settings::PIXEL_HEIGHT)) {
 		ballSim.Start();
 	}
 }
