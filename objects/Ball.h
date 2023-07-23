@@ -2,7 +2,8 @@
 
 class Ball {
 private:
-	double x, y, r;
+	olc::vd2d position;
+	unsigned int radius;
 
 public:
 	void drawSelf(olc::PixelGameEngine* pge);
