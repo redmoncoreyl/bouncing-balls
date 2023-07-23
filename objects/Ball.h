@@ -6,5 +6,6 @@ private:
 	unsigned int radius;
 
 public:
+	Ball();
 	void drawSelf(olc::PixelGameEngine* pge);
 };
