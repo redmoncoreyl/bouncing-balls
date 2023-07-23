@@ -11,10 +11,9 @@ bool BallBounceEngine::OnUserCreate() {
 }
 
 bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
-	int randomVariableX = std::rand() % ScreenWidth();
-	int randomVariableY = std::rand() % ScreenHeight();
-
-	Draw(randomVariableX, randomVariableY);
+	for (auto ball : balls) {
+		ball.drawSelf(this);
+	}
 
 	return true;
 }
