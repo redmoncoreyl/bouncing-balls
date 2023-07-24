@@ -4,18 +4,20 @@ COMPILE_FLAGS = -Wall -luser32 -lgdi32 -lopengl32 -lgdiplus -lShlwapi -ldwmapi -
 OBJECTS_DIR = objects
 OBJECTS = $(addprefix $(OBJECTS_DIR)/, BallSim.o BallBounceEngine.o Ball.o)
 
+SOURCE_DIR = src
+
 BallSim : $(OBJECTS)
 	$(COMPILER) -o BallSim $(OBJECTS) $(COMPILE_FLAGS)
 
-$(OBJECTS_DIR)/BallSim.o : BallSim.cpp
+$(OBJECTS_DIR)/BallSim.o : $(SOURCE_DIR)/BallSim.cpp
 	mkdir -p $(OBJECTS_DIR)
 	$(COMPILER) -c -o $@ $<
 
-$(OBJECTS_DIR)/BallBounceEngine.o : game-engine/BallBounceEngine.cpp
+$(OBJECTS_DIR)/BallBounceEngine.o : $(SOURCE_DIR)/game-engine/BallBounceEngine.cpp
 	mkdir -p $(OBJECTS_DIR)
 	$(COMPILER) -c -o $@ $<
 
-$(OBJECTS_DIR)/Ball.o : game-components/Ball.cpp
+$(OBJECTS_DIR)/Ball.o : $(SOURCE_DIR)/game-components/Ball.cpp
 	mkdir -p $(OBJECTS_DIR)
 	$(COMPILER) -c -o $@ $<
 
