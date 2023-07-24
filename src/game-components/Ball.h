@@ -5,11 +5,11 @@
 
 class Ball {
 private:
-	olc::vd2d position;
+	olc::vd2d position, velocity, acceleration;
 	unsigned int radius;
 
 public:
-	Ball();
+	Ball(unsigned int radius, olc::vd2d position, olc::vd2d velocity);
 	void drawSelf(olc::PixelGameEngine* pge);
 };
 
