@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "olcPixelGameEngine.h"
-#include "..\objects\Ball.h"
+#include "../game-components/Ball.h"
 
 class BallBounceEngine : public olc::PixelGameEngine {
 private:

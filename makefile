@@ -12,6 +12,6 @@ BallSim.o : BallSim.cpp
 BallBounceEngine.o : game-engine/BallBounceEngine.cpp
 	$(COMPILER) -c game-engine/BallBounceEngine.cpp
 
-Ball.o : objects/Ball.cpp
-	$(COMPILER) -c objects/Ball.cpp
+Ball.o : game-components/Ball.cpp
+	$(COMPILER) -c game-components/Ball.cpp
 
