@@ -1,27 +1,27 @@
 COMPILER = g++
 COMPILE_FLAGS = -Wall -luser32 -lgdi32 -lopengl32 -lgdiplus -lShlwapi -ldwmapi -lstdc++fs -static -std=c++17
 
-OBJECTS_DIR = objects
-OBJECTS = $(addprefix $(OBJECTS_DIR)/, BallSim.o BallBounceEngine.o Ball.o)
+# Make does not offer a recursive wildcard function, so here's one:
+# Credit: https://stackoverflow.com/a/12959764/3543696
+rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
-BallSim : $(OBJECTS)
-	$(COMPILER) -o BallSim $(OBJECTS) $(COMPILE_FLAGS)
+SOURCE_DIR = src
+SOURCE_FILES = $(call rwildcard,$(SOURCE_DIR)/,*.cpp)
 
-$(OBJECTS_DIR)/BallSim.o : BallSim.cpp
-	mkdir -p $(OBJECTS_DIR)
-	$(COMPILER) -c -o $@ $<
+BINARY_DIR = bin
+BINARY_FILES = $(patsubst $(SOURCE_DIR)/%.cpp,$(BINARY_DIR)/%.o,$(SOURCE_FILES))
 
-$(OBJECTS_DIR)/BallBounceEngine.o : game-engine/BallBounceEngine.cpp
-	mkdir -p $(OBJECTS_DIR)
-	$(COMPILER) -c -o $@ $<
+BallSim : $(BINARY_FILES)
+	$(COMPILER) -o BallSim $(BINARY_FILES) $(COMPILE_FLAGS)
 
-$(OBJECTS_DIR)/Ball.o : game-components/Ball.cpp
-	mkdir -p $(OBJECTS_DIR)
+# idea credit: https://stackoverflow.com/a/68215791/3543696
+$(BINARY_FILES) : $(BINARY_DIR)/%.o : $(SOURCE_DIR)/%.cpp
+	mkdir -p $(@D)
 	$(COMPILER) -c -o $@ $<
 
 run :
 	./BallSim
 
 clean :
-	rm -rf $(OBJECTS_DIR)
-	rm BallSim
+	rm -rf $(BINARY_DIR)
+	rm -f BallSim
