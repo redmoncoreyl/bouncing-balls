@@ -5,11 +5,13 @@
 #include "game-components/Ball.h"
 #include "Settings.h"
 
+using namespace Settings;
+
 int main() {
 	std::srand(std::time(nullptr));
 
 	BallBounceEngine ballSim;
-	if (ballSim.Construct(Settings::SCREEN_WIDTH, Settings::SCREEN_HEIGHT, Settings::PIXEL_WIDHT, Settings::PIXEL_HEIGHT)) {
+	if (ballSim.Construct(SCREEN_WIDTH, SCREEN_HEIGHT, PIXEL_WIDHT, PIXEL_HEIGHT)) {
 		ballSim.addBall(Ball());
 		ballSim.Start();
 	}
