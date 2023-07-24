@@ -5,9 +5,6 @@
 #include "game-components/Ball.h"
 #include "Settings.h"
 
-// g++ -o BallSim.exe BallSim.cpp .\game-engine\BallBounceEngine.cpp .\objects\Ball.cpp -luser32 -lgdi32 -lopengl32 -lgdiplus -lShlwapi -ldwmapi -lstdc++fs -static -std=c++17
-// .\BallSim.exe
-
 int main() {
 	std::srand(std::time(nullptr));
 
