@@ -3,8 +3,8 @@ COMPILE_FLAGS = -Wall -luser32 -lgdi32 -lopengl32 -lgdiplus -lShlwapi -ldwmapi -
 OBJECTS = BallSim.o BallBounceEngine.o Ball.o
 OBJECTS_FOLDER = objects
 
-build : $(OBJECTS)
-	$(COMPILER) -o BallSim.exe $(OBJECTS) $(COMPILE_FLAGS)
+BallSim : $(OBJECTS)
+	$(COMPILER) -o BallSim $(OBJECTS) $(COMPILE_FLAGS)
 
 BallSim.o : BallSim.cpp
 	$(COMPILER) -c BallSim.cpp
