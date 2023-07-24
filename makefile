@@ -18,3 +18,10 @@ $(OBJECTS_DIR)/BallBounceEngine.o : game-engine/BallBounceEngine.cpp
 $(OBJECTS_DIR)/Ball.o : game-components/Ball.cpp
 	mkdir -p $(OBJECTS_DIR)
 	$(COMPILER) -c -o $@ $<
+
+run :
+	./BallSim
+
+clean :
+	rm -rf $(OBJECTS_DIR)
+	rm BallSim
