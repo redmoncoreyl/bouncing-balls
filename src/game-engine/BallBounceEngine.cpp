@@ -18,6 +18,10 @@ bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
 	return true;
 }
 
+void BallBounceEngine::setGravity(const Force& g) {
+	gravity = g;
+}
+
 void BallBounceEngine::addBall(const Ball& b) {
 	balls.push_back(b);
 }
