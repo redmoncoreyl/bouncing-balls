@@ -23,4 +23,4 @@ run :
 
 clean :
 	rm -rf $(BINARY_DIR)
-	rm BallSim
+	rm -f BallSim
