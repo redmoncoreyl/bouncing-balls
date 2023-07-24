@@ -1,7 +1,10 @@
+#ifndef BALL_BOUNCE_ENGINE_H
+#define BALL_BOUNCE_ENGINE_H
+
 #include <vector>
 
 #include "olcPixelGameEngine.h"
-#include "..\objects\Ball.h"
+#include "../game-components/Ball.h"
 
 class BallBounceEngine : public olc::PixelGameEngine {
 private:
@@ -14,3 +17,5 @@ public:
 
 	void addBall(const Ball& b);
 };
+
+#endif

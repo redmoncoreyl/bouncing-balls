@@ -1,3 +1,6 @@
+#ifndef BALL_H
+#define BALL_H
+
 #include "../game-engine/olcPixelGameEngine.h"
 
 class Ball {
@@ -9,3 +12,5 @@ public:
 	Ball();
 	void drawSelf(olc::PixelGameEngine* pge);
 };
+
+#endif
