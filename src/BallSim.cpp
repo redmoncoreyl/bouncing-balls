@@ -3,6 +3,7 @@
 
 #include "game-engine/BallBounceEngine.h"
 #include "game-components/Ball.h"
+#include "game-components/Force.h"
 #include "Settings.h"
 
 using namespace Settings;
