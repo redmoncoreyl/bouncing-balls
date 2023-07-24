@@ -1,3 +1,6 @@
+#ifndef BALL_BOUNCE_ENGINE_H
+#define BALL_BOUNCE_ENGINE_H
+
 #include <vector>
 
 #include "olcPixelGameEngine.h"
@@ -14,3 +17,5 @@ public:
 
 	void addBall(const Ball& b);
 };
+
+#endif
