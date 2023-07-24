@@ -5,11 +5,12 @@ OBJECTS_DIR = objects
 OBJECTS = $(addprefix $(OBJECTS_DIR)/, BallSim.o BallBounceEngine.o Ball.o)
 
 SOURCE_DIR = src
+
 # Make does not offer a recursive wildcard function, so here's one:
+# Credit: https://stackoverflow.com/a/12959764/3543696
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
-# How to recursively find all files with the same name in a given folder
-SOURCE_FILES := $(call rwildcard,src/,*.cpp)
+SOURCE_FILES = $(patsubst $(SOURCE_DIR)/%,%,$(call rwildcard,$(SOURCE_DIR)/,*.cpp))
 
 BallSim : $(OBJECTS)
 	echo $(SOURCE_FILES)
