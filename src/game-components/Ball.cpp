@@ -21,14 +21,14 @@ void Ball::resetAcceleration() {
 }
 
 double Ball::totalEnergy(const Force& gravity) {
-	return potentialEnergy(gravity) + keneticEnergy();
+	return potentialEnergy(gravity) + kineticEnergy();
 }
 
 double Ball::potentialEnergy(const Force& gravity) {
 	
 }
 
-double Ball::keneticEnergy() {
+double Ball::kineticEnergy() {
 	return mass()*velocity.mag2()/2;
 }
 

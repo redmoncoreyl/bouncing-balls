@@ -17,7 +17,7 @@ public:
 	void resetAcceleration();
 	double totalEnergy(const Force& gravity);
 	double potentialEnergy(const Force& gravity);
-	double keneticEnergy();
+	double kineticEnergy();
 	double mass();
 };
 
