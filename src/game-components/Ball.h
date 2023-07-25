@@ -13,7 +13,7 @@ public:
 	Ball(unsigned int radius, olc::vd2d position, olc::vd2d velocity);
 	void drawSelf(olc::PixelGameEngine* pge);
 	void addForce(const Force& force);
-	void updateSelf(const float& elapsedTimeSeconds, const bool& resetAcceleration);
+	void updateSelf(float elapsedTimeSeconds, bool shouldResetAcceleration);
 	void resetAcceleration();
 };
 

@@ -10,10 +10,10 @@ void Ball::addForce(const Force& force) {
 	acceleration += force;
 }
 
-void Ball::updateSelf(const float& timeElapsedSeconds, const bool& resetAcceleration) {
+void Ball::updateSelf(float timeElapsedSeconds, bool shouldResetAcceleration) {
 	position += acceleration*timeElapsedSeconds*timeElapsedSeconds/2 + velocity*timeElapsedSeconds;
 	velocity += acceleration*timeElapsedSeconds;
-	if (resetAcceleration) this->resetAcceleration();
+	if (shouldResetAcceleration) resetAcceleration();
 }
 
 void Ball::resetAcceleration() {
