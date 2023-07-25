@@ -7,8 +7,13 @@ public:
 
 private: 
 	State state;
-	
-public: 
+
+	static BallFactory instance;
+
+	BallFactory();
+
+public:
+	static BallFactory& getInstance();
 	
 };
 
