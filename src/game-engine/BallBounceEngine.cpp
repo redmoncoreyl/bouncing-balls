@@ -12,6 +12,10 @@ bool BallBounceEngine::OnUserCreate() {
 
 bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
 	for (auto& ball : balls) {
+		ball.addForce(gravity);
+	}
+
+	for (auto& ball : balls) {
 		ball.updateSelf(fTimeElapsed);
 	}
 
