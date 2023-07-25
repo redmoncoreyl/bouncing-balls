@@ -12,7 +12,7 @@ bool BallBounceEngine::OnUserCreate() {
 
 bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
 	for (auto ball : balls) {
-		ball.drawSelf(this);
+		ball.drawSelf(*this);
 	}
 
 	return true;
