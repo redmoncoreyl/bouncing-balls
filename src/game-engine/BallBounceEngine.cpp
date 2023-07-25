@@ -11,6 +11,12 @@ bool BallBounceEngine::OnUserCreate() {
 }
 
 bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
+	for (auto& ball : balls) {
+		ball.updateSelf(fTimeElapsed);
+	}
+
+	Clear(olc::BLACK);
+
 	for (auto ball : balls) {
 		ball.drawSelf(*this);
 	}
