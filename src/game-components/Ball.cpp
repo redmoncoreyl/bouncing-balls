@@ -25,7 +25,17 @@ double Ball::totalEnergy(const Force& gravity) {
 }
 
 double Ball::potentialEnergy(const Force& gravity) {
+	if (gravity.mag2() == 0) return 0;
+
+	return mass()*gravity.mag()*height(gravity);
+}
+
+double Ball::height(const Force& gravity) {
+	olc::vd2d groundVector = gravity.perp();
+	olc::vd2d positionProjectionOntoGround = groundVector * position.dot(groundVector)/groundVector.mag2();
+	olc::vd2d heightVector = position - positionProjectionOntoGround;
 	
+	return heightVector.mag();
 }
 
 double Ball::kineticEnergy() {
