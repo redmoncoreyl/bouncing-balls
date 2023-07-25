@@ -19,3 +19,19 @@ void Ball::updateSelf(float timeElapsedSeconds, bool shouldResetAcceleration) {
 void Ball::resetAcceleration() {
 	acceleration = olc::vd2d();
 }
+
+double Ball::totalEnergy(const Force& gravity) {
+	return potentialEnergy(gravity) + keneticEnergy();
+}
+
+double Ball::potentialEnergy(const Force& gravity) {
+	
+}
+
+double Ball::keneticEnergy() {
+	return mass()*velocity.mag2()/2;
+}
+
+double Ball::mass() {
+	return radius*radius;
+}
