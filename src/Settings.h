@@ -10,7 +10,7 @@ namespace Settings {
 
 	// physics constants
 	const double GRAVITY_X = 0;
-	const double GRAVITY_Y = 420;
+	const double GRAVITY_Y = 1312;
 }
 
 #endif
