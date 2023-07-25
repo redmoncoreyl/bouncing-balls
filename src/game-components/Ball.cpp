@@ -9,3 +9,13 @@ void Ball::drawSelf(olc::PixelGameEngine* pge) {
 void Ball::addForce(const Force& force) {
 	acceleration += force;
 }
+
+void Ball::updateSelf(const float& timeElapsedSeconds, const bool& resetAcceleration) {
+	position += acceleration*timeElapsedSeconds*timeElapsedSeconds/2 + velocity*timeElapsedSeconds;
+	velocity += acceleration*timeElapsedSeconds;
+	if (resetAcceleration) this->resetAcceleration();
+}
+
+void Ball::resetAcceleration() {
+	acceleration = olc::vd2d();
+}
