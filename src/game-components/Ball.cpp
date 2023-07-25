@@ -31,11 +31,7 @@ double Ball::potentialEnergy(const Force& gravity) {
 }
 
 double Ball::height(const Force& gravity) {
-	olc::vd2d groundVector = gravity.perp();
-	olc::vd2d positionProjectionOntoGround = groundVector * position.dot(groundVector)/groundVector.mag2();
-	olc::vd2d heightVector = position - positionProjectionOntoGround;
-	
-	return heightVector.mag();
+	return position.dot(gravity)/gravity.mag();
 }
 
 double Ball::kineticEnergy() {
