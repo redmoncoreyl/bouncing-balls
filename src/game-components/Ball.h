@@ -15,6 +15,9 @@ public:
 	void addForce(const Force& force);
 	void updateSelf(float elapsedTimeSeconds, bool shouldResetAcceleration = true);
 	void resetAcceleration();
+	double totalEnergy(const Force& gravity);
+	double potentialEnergy(const Force& gravity);
+	double keneticEnergy();
 };
 
 #endif
