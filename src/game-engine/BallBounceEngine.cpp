@@ -2,7 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "BallBounceEngine.h"
 
-BallBounceEngine::BallBounceEngine() {
+BallBounceEngine::BallBounceEngine() : ballFactory(BallFactory::getInstance()) {
 	sAppName = "Ball Bounce Engine";
 }
 
@@ -11,6 +11,8 @@ bool BallBounceEngine::OnUserCreate() {
 }
 
 bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
+	ballFactory.updateSelf(fTimeElapsed, GetMouse(0));
+
 	for (auto& ball : balls) {
 		ball.addForce(gravity);
 	}
