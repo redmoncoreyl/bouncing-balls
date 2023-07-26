@@ -26,6 +26,7 @@ bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
 
 	Clear(olc::BLACK);
 
+	ballFactory.drawSelf(*this);
 	for (auto ball : balls) {
 		ball.drawSelf(*this);
 	}

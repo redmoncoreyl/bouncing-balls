@@ -30,5 +30,6 @@ std::optional<Ball> BallFactory::updateSelf(float timeElapsedSeconds, olc::HWBut
 }
 
 void BallFactory::drawSelf(olc::PixelGameEngine& pge) const {
-	
+	if (state == State::STAND_BY) return;
+	pge.DrawCircle(pge.GetMousePos(), ballRadius);
 }
