@@ -6,11 +6,13 @@
 #include "olcPixelGameEngine.h"
 #include "../game-components/Ball.h"
 #include "../game-components/Force.h"
+#include "../game-components/BallFactory.h"
 
 class BallBounceEngine : public olc::PixelGameEngine {
 private:
 	Force gravity;
 	std::vector<Ball> balls;
+	BallFactory ballFactory;
 
 public:
 	BallBounceEngine();
