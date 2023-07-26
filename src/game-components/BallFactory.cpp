@@ -28,3 +28,7 @@ std::optional<Ball> BallFactory::updateSelf(float timeElapsedSeconds, olc::HWBut
 
 	return std::nullopt;
 }
+
+void BallFactory::drawSelf(olc::PixelGameEngine& pge) const {
+	
+}

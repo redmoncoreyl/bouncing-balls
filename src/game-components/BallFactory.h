@@ -20,7 +20,7 @@ public:
 	static BallFactory& getInstance();
 
 	std::optional<Ball> updateSelf(float timeElapsedSeconds, olc::HWButton leftMouseButton, olc::vi2d mousePosition);
-	
+	void drawSelf(olc::PixelGameEngine& pge) const;
 };
 
 #endif
