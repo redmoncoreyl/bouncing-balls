@@ -12,9 +12,9 @@ public:
 
 private: 
 	State state;
+	double ballRadius;
 
 	static BallFactory instance;
-
 	BallFactory();
 
 public:
