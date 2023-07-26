@@ -7,10 +7,8 @@
 #include "Ball.h"
 
 class BallFactory {
-public:
+private:
 	enum class State { STAND_BY, BUILDING_BALL, BALL_READY };
-
-private: 
 	State state;
 	double ballRadius;
 
