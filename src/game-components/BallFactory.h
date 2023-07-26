@@ -9,7 +9,7 @@
 class BallFactory {
 private:
 	const static double RADIUS_GROWTH_RATE;
-	enum class State { STAND_BY, BUILDING_BALL, BALL_READY };
+	enum class State { STAND_BY, BALL_GROWING, BALL_DRAGGING, BALL_RELEASING};
 	State state;
 	double ballRadius;
 
@@ -19,7 +19,7 @@ private:
 public:
 	static BallFactory& getInstance();
 
-	std::optional<Ball> updateSelf(float elapsedTimeSeconds, olc::HWButton leftMouseButton);
+	std::optional<Ball> updateSelf(float timeElapsedSeconds, olc::HWButton leftMouseButton, olc::vi2d mousePosition);
 	
 };
 
