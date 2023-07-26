@@ -11,7 +11,10 @@ bool BallBounceEngine::OnUserCreate() {
 }
 
 bool BallBounceEngine::OnUserUpdate(float fTimeElapsed) {
-	ballFactory.updateSelf(fTimeElapsed, GetMouse(0));
+	std::optional<Ball> newBall = ballFactory.updateSelf(fTimeElapsed, GetMouse(0), GetMousePos());
+	if (newBall.has_value()) {
+		balls.push_back(newBall.value());
+	}
 
 	for (auto& ball : balls) {
 		ball.addForce(gravity);
