@@ -8,6 +8,7 @@
 
 class BallFactory {
 private:
+	const static double RADIUS_GROWTH_RATE;
 	enum class State { STAND_BY, BUILDING_BALL, BALL_READY };
 	State state;
 	double ballRadius;

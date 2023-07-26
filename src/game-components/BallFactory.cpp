@@ -1,5 +1,7 @@
 #include "BallFactory.h"
 
+const double BallFactory::RADIUS_GROWTH_RATE = 30;
+
 BallFactory::BallFactory() : state(State::STAND_BY) {}
 
 BallFactory BallFactory::instance = BallFactory();
